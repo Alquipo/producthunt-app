@@ -21,6 +21,7 @@ const ProductSchema = new mongoose.Schema({
     }
 });
 
+//add modulo de paginação 
 ProductSchema.plugin(mongoosePaginate)
 
 mongoose.model('Product', ProductSchema);
