@@ -4,9 +4,6 @@ import Routes from './routes'
 import './styles_global.css'
 
 import Header from './components/Header'
-import Main from './pages/main'
-
-
 
 
 const App = () => (
