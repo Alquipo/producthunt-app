@@ -1,20 +1,69 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
 
-
+import './styles.css'
 export default class Main extends Component {
+    state = {
+        products: [],
+        productInfo: [],
+        page: 1,
+    }
+
     componentDidMount() {
         this.loadProducts()
 
     }
 
-    loadProducts = async () => {
-        const response = await api.get('/products')
+    loadProducts = async (page = 1) => {
+        const response = await api.get(`/products?page=${page}`)
 
-        console.log(response)
+        const { docs, ...productInfo } = response.data
+
+        this.setState({ products: docs, productInfo, page })
     }
 
+    nextPage = () => {
+        const { page, productInfo } = this.state
+
+        if (page === productInfo.page) return
+
+        const pageNumber = page + 1
+
+        this.loadProducts(pageNumber)
+
+    }
+
+    prevPage = () => {
+        const { page } = this.state
+
+        if (page === 1) return
+
+        const pageNumber = page - 1
+
+        this.loadProducts(pageNumber)
+    }
+
+
     render() {
-        return <h1>hello</h1>
+
+        const { products, page, productInfo } = this.state
+
+        return (
+            <div className="product-list">
+                {products.map(product => (
+                    <article key={product._key}>
+                        <strong>{product.title}</strong>
+                        <p>{product.description}</p>
+
+                        <a href="{product.url}">Acessar</a>
+                    </article>
+                ))}
+
+                <div className="actions">
+                    <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
+                    <button disabled={page === productInfo.pages} onClick={this.nextPage}>Proximo</button>
+                </div>
+            </div>
+        )
     }
 }
