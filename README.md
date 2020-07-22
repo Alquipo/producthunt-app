@@ -48,43 +48,6 @@ Projeto efetuado no curso Starter da Rocketseat usando as tecnologias NodeJs, Re
     <img alt="" title="" src=".github/capa.svg" width="500px" />
 </h3>
 
-## :tada: Melhorias
-
-##### - Bugs Corrigidos: :bug:
-
-    -
-
-##### - Melhorias na Aplicação: :medal_sports:
-
-**WEB**:
-
-    -
-
-**Mobile**:
-
-    -
-
-## 🎨 Layout
-
-### Mobile
-
-<h4 align="center">
-  <img alt="" title="" src=".github/app-full.gif" width="194px" />
-  <img alt="" title="" src=".github/app-home-full.jpg" width="200px" />
-  <img alt="" title="" src=".github/app-point.jpg" width="200px" />
-  <img alt="" title="" src=".github/app-detail.jpg" width="200px" />
-</h4>
-
-### Web
-
-<h4 align="center">
-  <img alt="" title="" src=".github/web-point.gif" width="500px" />
-</h4>
-<h4 align="center">
-  <img alt="" title="" src=".github/web-home.png" width="400px" />
-  
-  <img alt="" title="" src=".github/web-modal.png" width="442px" />
-</h4>
 
 ## :hammer: Tecnologias
 
@@ -155,14 +118,18 @@ $ yarn start
 ### 📱Rodando a aplicação mobile
 
 ```bash
-# Vá para a pasta da aplicação Front End
-$ cd mobile
-
 # Instale as dependências
-$ yarn install
+$ yarn
 
-# Execute a aplicação
-$
+# Instale as dependências IOS (somente se for usar IOS)
+$ cd ios
+$ pod install
+
+# Execute a Aplicação Android (somente se for usar Android)
+$ yarn android
+
+# Execute a Aplicação IOS (somente se for usar IOS)
+$ yarn ios
 
 ```
 
