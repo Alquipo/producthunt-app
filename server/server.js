@@ -1,25 +1,25 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const requireDir = require('require-dir')
-const cors = require('cors')
+const express = require("express");
+const mongoose = require("mongoose");
+const requireDir = require("require-dir");
+const cors = require("cors");
 
-//iniciando APp
-const app = express()
+//iniciando APP
+const app = express();
 
 // permite que envia json para api
-app.use(express.json())
+app.use(express.json());
 
-app.use(cors())
+app.use(cors());
 
 //iniciando o db
-mongoose.connect('mongodb://localhost:27017/apiProductHunt', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect("mongodb://localhost:27017/apiProductHunt", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-requireDir('./src/models')
+requireDir("./src/models");
 
 //Rotas
-app.use('/api', require('./src/routes'))
+app.use("/api", require("./src/routes"));
 
-app.listen(3001)
+app.listen(3001);
