@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Main from "./pages/main";
 import Product from "./pages/products";
-import ProductStore from "./pages/ProductStore";
 
 const Routes = () => (
   <BrowserRouter>
